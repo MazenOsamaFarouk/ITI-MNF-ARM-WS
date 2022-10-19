@@ -21,14 +21,22 @@ int main(void)
 	RCC_vInit(); // HSE, NO PLL, NO PRESCALERS
 	RCC_vEnableClock(RCC_APB2, RCC_EN_GPIOA);
 
-	GPIO_vWritePinDirection(GPIO_PORTA, GPIO_PIN0, OUTPUT_2MHZ_GPPP);
+	GPIO_Config_t ledpin = {
+			.Port = mGPIO_PORTA,
+			.Pin  = mGPIO_PIN0,
+			.Mode = mGPIO_OUTPUT,
+			.OutputSpeed = mGPIO_2MHZ,
+			.OutputType = mGPIO_PushPull,
+			.AltFn      = mGPIO_GeneralPurpose
+	};
 
+	GPIO_vInit(&ledpin);
 
 	while(1)
 	{
-		GPIO_vWritePinValue(GPIO_PORTA, GPIO_PIN0, GPIO_HIGH);
+		GPIO_vWritePinValue_2(&ledpin, GPIO_HIGH);
 		ARM_DELAY(1000);
-		GPIO_vWritePinValue(GPIO_PORTA, GPIO_PIN0, GPIO_LOW);
+		GPIO_vWritePinValue_2(&ledpin, GPIO_LOW);
 		ARM_DELAY(1000);
 
 	}
