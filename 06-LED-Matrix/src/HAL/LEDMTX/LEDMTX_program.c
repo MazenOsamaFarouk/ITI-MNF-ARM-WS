@@ -26,3 +26,8 @@ void LEDMTX_vDisplayFrame(u8 A_u8RowsArray[], u32 A_u32DisplayTime)
 {
 
 }
+
+void Kandil(void)
+{
+	//Hello from Kandil
+}
