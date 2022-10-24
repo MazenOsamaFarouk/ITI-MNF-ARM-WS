@@ -9,7 +9,7 @@
 #include "../../LIB/STD_TYPES.h"
 #include "../../LIB/BIT_MATH.h"
 
-#include "../MCAL/SCB/SCB_interface.h"
+//#include "../MCAL/SCB/SCB_interface.h"
 
 
 #include "NVIC_interface.h"
