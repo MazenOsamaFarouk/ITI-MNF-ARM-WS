@@ -12,6 +12,7 @@ typedef struct
 {
 	u8 periodicity;
 	u8 TaskState ;
+	u16 InitDelay ;
 	void (*TaskCode)(void);
 }Task_t;
 

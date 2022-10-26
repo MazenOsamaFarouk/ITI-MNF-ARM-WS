@@ -19,6 +19,7 @@ typedef enum
 
 void OS_vTaskCreate(u8 priority,
 				  u8 periodicity ,
+				  u16 initDelay,
 				  void (*TaskCode)(void));
 
 void OS_vStartSchdeuler(void);
