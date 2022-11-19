@@ -41,8 +41,6 @@ void Task_SSD_MUX(void) // 10ms
 		SSD_DisplayNumber(SSD_number/10 , SSD_2);
 		units = 1;
 	}
-
-
 }
 
 
@@ -72,8 +70,6 @@ int main(void)
 	 */
 	OS_vTaskCreate(0,10,1,Task_SSD_MUX);
 	OS_vTaskCreate(1,1000,2,Task_SSD_Update);
-
-
 
 	OS_vStartSchdeuler();
 
